@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// First choose
+// rgb(253, 191, 137), royalblue
+// Second choose
+// #101820ff, yellow;
+
+$textColor: yellow;
+$secondColor: #101820ff;
+
+body {
+  background-color: $secondColor;
+  color: $textColor;
+}
+
+@mixin centering($content, $dir) {
+  display: flex;
+
+  justify-content: $content;
+  align-items: center;
+  flex-direction: $dir;
+}
+
+.shape {
+  width: 30em;
+  height: 25em;
+  padding: 0px 20px;
+  @include centering(space-around, column);
+  margin: 7em auto;
+  border: 4px solid yellow;
+  .letters {
+    @include centering(center, row);
+    flex-wrap: wrap;
+    button {
+      background-color: $secondColor;
+      margin: 6px;
+      padding: 7px 10px;
+      cursor: pointer;
+      color: $textColor;
+      border: 1px solid rgba(255, 255, 0, 0.623);
+    }
+    .turnOff {
+      border: 1px solid black;
+      opacity: 0.4;
+    }
+  }
+  .question {
+    font-size: 1.4em;
+  }
+  .solution {
+    @include centering(center, row);
+    width: 20em;
+    div {
+      font-size: 30px;
+      min-width: 20px;
+      margin: 0px 5px;
+      padding: 5px 10px;
+    }
+  }
+}
