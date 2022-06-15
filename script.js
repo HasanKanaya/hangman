@@ -8,7 +8,6 @@ let questions = [
 let question = document.querySelector(".question");
 let answers = ["java", "javascript", "lamborghini"];
 let randomPick = Math.floor(Math.random() * 3);
-randomPick = 0;
 let solution = document.querySelector(".solution");
 let lives = document.querySelector(".lives");
 // Variables
@@ -67,3 +66,19 @@ letters.forEach(function (e) {
   });
 });
 // clicked buttons
+
+// Settings
+$("button.settings").on("click", function () {
+  $("div.settings").animate({
+    left: 20,
+    opacity: 1,
+  });
+});
+
+$("button.closeSettings").on("click", function () {
+  $("div.settings").animate({
+    left: -500,
+    opacity: 0,
+  });
+});
+// Settings

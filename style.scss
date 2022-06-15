@@ -19,7 +19,6 @@ body {
 
 @mixin centering($content, $dir) {
   display: flex;
-
   justify-content: $content;
   align-items: center;
   flex-direction: $dir;
@@ -61,4 +60,21 @@ body {
       padding: 5px 10px;
     }
   }
+}
+
+div.settings {
+  width: 30em;
+  height: 15em;
+  background-color: rgb(255, 0, 0);
+  position: relative;
+  left: -100px;
+  opacity: 0;
+}
+
+button.settings {
+  position: absolute;
+  right: 3em;
+  bottom: 25em;
+  padding: 7px 10px;
+  cursor: pointer;
 }
