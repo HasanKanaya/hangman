@@ -12,9 +12,23 @@ let solution = document.querySelector(".solution");
 let lives = document.querySelector(".lives");
 // Variables
 
-console.log(questions[randomPick]);
-console.log(answers[randomPick]);
-console.log(randomPick);
+// Get Data from Local Stoarge
+if (localStorage.getItem("color") != null) {
+  let colorValue = localStorage.getItem("color");
+  // Body
+  document.body.classList.add(colorValue);
+  // Letters
+  letters.forEach((e) => {
+    e.classList.add(colorValue);
+  });
+  // Border Shape
+  document.querySelector(".shape").classList.add(colorValue);
+}
+
+if (localStorage.getItem("color") != null) {
+  document.body.classList.add(localStorage.getItem("font"));
+}
+// Get Data from Local Stoarge
 
 // put to the code
 let keyQuestion = questions[randomPick];
@@ -83,7 +97,7 @@ $("button.closeSettings").on("click", function () {
 });
 // Settings
 
-// Color Settings
+// Colors Settings
 let settingsColors = document.querySelectorAll(".settings .colors div");
 let allColors = [];
 
@@ -104,7 +118,33 @@ settingsColors.forEach((e) => {
     x.classList.remove(...allColors);
     x.classList.add(this.getAttribute("data-color"));
     // Elements
+
+    // Local Stoarge
+    localStorage.setItem("color", this.getAttribute("data-color"));
+    // Local Stoarge
   });
 });
 
-// Color Settings
+// Colors Settings
+
+// Fonts Settings
+let settingsFonts = document.querySelectorAll(".settings .fonts div");
+let allFonts = [];
+
+settingsFonts.forEach((e) => {
+  console.log(e.classList.item(0));
+  allFonts.push(e.classList.item(0));
+  e.addEventListener("click", function () {
+    // Elements
+    // Body
+    document.body.classList.remove(...allFonts);
+    document.body.classList.add(this.classList.item(0));
+    // Elements
+
+    // Local Stoarge
+    localStorage.setItem("font", this.classList.item(0));
+    // Local Stoarge
+  });
+});
+
+// Fonts Settings

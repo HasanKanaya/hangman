@@ -4,21 +4,13 @@
   box-sizing: border-box;
 }
 
-// First choose
-// #101820ff, yellow;
-
-// Second choose
-// #fdbf89, royalblue
-
-// Third choice
-// #fcf6f5ff, #990011ff
-
 $textColor: yellow;
 $secondColor: #101820ff;
 
 body {
   background-color: $secondColor;
   color: $textColor;
+  font-family: cursive;
 }
 
 @mixin centering($content, $dir) {
@@ -68,9 +60,10 @@ body {
 }
 
 div.settings {
-  width: 25em;
+  width: 22em;
   height: 15em;
-  background-color: rgb(212, 52, 52);
+  background-color: rgb(51, 41, 41);
+  border: 2px solid yellow;
   position: relative;
   margin: -230px auto;
   opacity: 0;
@@ -78,9 +71,9 @@ div.settings {
 
 button.settings {
   position: absolute;
-  right: 3em;
-  bottom: 5em;
-  padding: 7px 10px;
+  right: 30px;
+  bottom: 50px;
+  padding: 7px 15px;
   cursor: pointer;
 }
 
@@ -88,9 +81,7 @@ button.settings {
 .settings {
   .colors {
     height: 100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    @include centering(space-around, row);
     div {
       width: 40px;
       height: 40px;
@@ -108,24 +99,52 @@ button.settings {
       background-color: #990011ff;
     }
   }
+  .fonts {
+    @include centering(space-around, rows);
+    height: 100px;
+    div {
+      text-shadow: 3px 3px 3px black;
+      cursor: pointer;
+    }
+  }
+  .donothing {
+    background-color: blue;
+    width: fit-content;
+    margin: -10px auto;
+    .closeSettings {
+      cursor: pointer;
+      padding: 7px 15px;
+      background-color: #101820ff;
+      color: yellow;
+      border: 2px solid yellow;
+    }
+  }
 }
-
 .yellow {
   background-color: #101820ff !important;
   color: yellow !important;
   border-color: yellow !important;
 }
-
 .royalblue {
   background-color: royalblue !important;
   color: #eee !important;
   border-color: #eee !important;
 }
-
 .white {
   background-color: #990011ff !important;
   color: Turquoise !important;
   border-color: Turquoise !important;
 }
-
 // Colors feature
+
+// Fonts feature
+.cursive {
+  font-family: cursive;
+}
+.CourierNew {
+  font-family: "Courier New", Courier;
+}
+.GillSans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri;
+}
+// Fonts feature

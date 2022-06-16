@@ -7,6 +7,7 @@
 body {
   background-color: #101820ff;
   color: yellow;
+  font-family: cursive;
 }
 
 .shape {
@@ -64,9 +65,10 @@ body {
 }
 
 div.settings {
-  width: 25em;
+  width: 22em;
   height: 15em;
-  background-color: #d43434;
+  background-color: #332929;
+  border: 2px solid yellow;
   position: relative;
   margin: -230px auto;
   opacity: 0;
@@ -74,9 +76,9 @@ div.settings {
 
 button.settings {
   position: absolute;
-  right: 3em;
-  bottom: 5em;
-  padding: 7px 10px;
+  right: 30px;
+  bottom: 50px;
+  padding: 7px 15px;
   cursor: pointer;
 }
 
@@ -85,6 +87,7 @@ button.settings {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row;
 }
 
 .settings .colors div {
@@ -107,6 +110,33 @@ button.settings {
   background-color: #990011ff;
 }
 
+.settings .fonts {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: rows;
+  height: 100px;
+}
+
+.settings .fonts div {
+  text-shadow: 3px 3px 3px black;
+  cursor: pointer;
+}
+
+.settings .donothing {
+  background-color: blue;
+  width: fit-content;
+  margin: -10px auto;
+}
+
+.settings .donothing .closeSettings {
+  cursor: pointer;
+  padding: 7px 15px;
+  background-color: #101820ff;
+  color: yellow;
+  border: 2px solid yellow;
+}
+
 .yellow {
   background-color: #101820ff !important;
   color: yellow !important;
@@ -123,5 +153,17 @@ button.settings {
   background-color: #990011ff !important;
   color: Turquoise !important;
   border-color: Turquoise !important;
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.CourierNew {
+  font-family: "Courier New", Courier;
+}
+
+.GillSans {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri;
 }
 /*# sourceMappingURL=style.css.map */
