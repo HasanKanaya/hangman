@@ -70,15 +70,41 @@ letters.forEach(function (e) {
 // Settings
 $("button.settings").on("click", function () {
   $("div.settings").animate({
-    left: 20,
+    top: 0,
     opacity: 1,
   });
 });
 
 $("button.closeSettings").on("click", function () {
   $("div.settings").animate({
-    left: -500,
+    top: -500,
     opacity: 0,
   });
 });
 // Settings
+
+// Color Settings
+let settingsColors = document.querySelectorAll(".settings .colors div");
+let allColors = [];
+
+settingsColors.forEach((e) => {
+  allColors.push(e.getAttribute("data-color"));
+  e.addEventListener("click", function () {
+    // Elements
+    // Body
+    document.body.classList.remove(...allColors);
+    document.body.classList.add(this.getAttribute("data-color"));
+    // Letters
+    letters.forEach((e) => {
+      e.classList.remove(...allColors);
+      e.classList.add(this.getAttribute("data-color"));
+    });
+    // Border shape
+    let x = document.querySelector(".shape");
+    x.classList.remove(...allColors);
+    x.classList.add(this.getAttribute("data-color"));
+    // Elements
+  });
+});
+
+// Color Settings
