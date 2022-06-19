@@ -148,3 +148,19 @@ button.settings {
   font-family: "Gill Sans", "Gill Sans MT", Calibri;
 }
 // Fonts feature
+
+// Adding Responsive
+
+@media (max-width: 767px) {
+  button.settings {
+    transform: translate(100px, 50px);
+  }
+  div.settings {
+    width: 20em;
+    height: 15em;
+    margin: -230px 80px;
+    opacity: 0;
+  }
+}
+
+// Adding Responsive
